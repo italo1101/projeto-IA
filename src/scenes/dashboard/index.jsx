@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, Button, Container, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
@@ -13,46 +13,46 @@ const Dashboard = () => {
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Box m="20px">
+    <Container maxWidth="xl">
       {/* HEADER */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="Painel de Controle" subtitle="Bem vindo ao Painel de Controle da Ustore" />
+      <Box m="20px">
+        <Box display="flex" justifyContent="space-between" alignItems="center">
+          <Header title="Painel de Controle" subtitle="Bem vindo ao Painel de Controle da Ustore" />
 
-        <Box>
-          <Button
-            sx={{
-              backgroundColor: colors.blueAccent[700],
-              color: colors.redAccent[400],
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
-          >
-            <DownloadOutlinedIcon />
-            Baixar Dados
-          </Button>
+          <Box>
+            <Button
+              sx={{
+                backgroundColor: colors.blueAccent[700],
+                color: colors.redAccent[400],
+                fontSize: "14px",
+                fontWeight: "bold",
+                padding: "10px 20px",
+              }}
+            >
+              <DownloadOutlinedIcon />
+              Baixar Dados
+            </Button>
+          </Box>
         </Box>
       </Box>
 
       {/* GRID & CHARTS */}
-
-      {/* Line Chart */}
-
       <Box
         display="grid"
-        gridTemplateColumns="repeat(12, 1fr)"
+        gridTemplateColumns={{ xs: '1fr', md: 'repeat(12, 1fr)' }}
         gridAutoRows="140px"
         gap="20px"
       >
+        {/* Line Chart */}
         <Box
-          gridColumn="span 8"
+          gridColumn={{ xs: 'span 12', md: 'span 8' }}
           gridRow="span 2"
           backgroundColor={colors.blueAccent[800]}
         >
           <Box
             mt="25px"
             p="0 30px"
-            display="flex "
+            display="flex"
             justifyContent="space-between"
             alignItems="center"
           >
@@ -81,14 +81,15 @@ const Dashboard = () => {
             </Box>
           </Box>
 
-            {/* Recent Transactions */}
-          
+          {/* Recent Transactions */}
           <Box height="250px" m="-20px 0 0 0">
             <LineChart isDashboard={true} />
           </Box>
         </Box>
+
+        {/* Transações Recentes */}
         <Box
-          gridColumn="span 4"
+          gridColumn={{ xs: 'span 12', md: 'span 4' }}
           gridRow="span 2"
           backgroundColor={colors.blueAccent[800]}
           overflow="auto"
@@ -139,10 +140,9 @@ const Dashboard = () => {
           ))}
         </Box>
 
-        {/* Pie Chart */}
-
+        {/* Produtos Mais Vendidos */}
         <Box
-          gridColumn="span 4"
+          gridColumn={{ xs: 'span 12', md: 'span 4' }}
           gridRow="span 2"
           backgroundColor={colors.blueAccent[800]}
         >
@@ -158,10 +158,9 @@ const Dashboard = () => {
           </Box>
         </Box>
 
-            {/* Bar Chart */}
-
+        {/* Gastos e Ganhos */}
         <Box
-          gridColumn="span 4"
+          gridColumn={{ xs: 'span 12', md: 'span 4' }}
           gridRow="span 2"
           backgroundColor={colors.blueAccent[800]}
         >
@@ -176,8 +175,10 @@ const Dashboard = () => {
             <BarChart isDashboard={true} />
           </Box>
         </Box>
+
+        {/* Mapa de Vendas */}
         <Box
-          gridColumn="span 4"
+          gridColumn={{ xs: 'span 12', md: 'span 4' }}
           gridRow="span 2"
           backgroundColor={colors.blueAccent[800]}
           padding="30px"
@@ -194,7 +195,7 @@ const Dashboard = () => {
           </Box>
         </Box>
       </Box>
-    </Box>
+    </Container>
   );
 };
 
