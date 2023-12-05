@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -8,15 +8,14 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-// import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import StorefrontIcon from '@mui/icons-material/Storefront';
+import StorefrontIcon from "@mui/icons-material/Storefront";
 
-const Item = ({ title, to, icon, selected, setSelected }) => {
+const Item = ({ title, to, icon, selected, setSelected, link }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
@@ -29,7 +28,11 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       icon={icon}
     >
       <Typography>{title}</Typography>
-      <Link to={to} />
+      {link ? (
+        <a href={link} target="_blank" rel="noopener noreferrer"/>
+      ) : (
+        <Link to={to} />
+      )}
     </MenuItem>
   );
 };
@@ -80,11 +83,7 @@ const Sidebar = () => {
               >
                 <Typography variant="h2" color={colors.redAccent[500]}>
                   <a href="/">
-                    <img
-                    src="../../assets/ustoreLogo.png"
-                    alt="logo"
-                    width="100px"
-                    />
+                    <img src="../../assets/ustoreLogo.png" alt="logo" width="100px" />
                   </a>
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
@@ -160,8 +159,6 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-           
-
             <Typography
               variant="h6"
               color={colors.grey[900]}
@@ -170,21 +167,20 @@ const Sidebar = () => {
               Páginas
             </Typography>
 
-             <Item
-                title="Produtos"
-                to="/products"
-                icon={<StorefrontIcon/>}
-                selected={selected}
-                setSelected={setSelected}
-          
-              />
+            <Item
+              title="Produtos"
+              to="/products"
+              icon={<StorefrontIcon />}
+              selected={selected}
+              setSelected={setSelected}
+              link="https://front-end-beta-seven.vercel.app"
+            />
 
             <Typography
               variant="h6"
               color={colors.grey[900]}
               sx={{ m: "15px 0 5px 20px" }}
             >
-
               Gráficos
             </Typography>
 
@@ -214,7 +210,7 @@ const Sidebar = () => {
             <Item
               title="Mais Vendidos"
               to="/pie"
-              icon={<PieChartOutlineOutlinedIcon/>}
+              icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

@@ -6,12 +6,13 @@ import { tokens } from "../../theme";
 const Geography = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
   return (
-    <Box m="20px">
-      <Header title="Mapa de Vendas"/>
+    <Box m="20px" overflowX="auto">
+      <Header title="Mapa de Vendas" />
 
       <Box
-        height="75vh"
+        height="75vh" // ou qualquer altura desejada
         border={`1px solid ${colors.grey[100]}`}
         borderRadius="4px"
       >
