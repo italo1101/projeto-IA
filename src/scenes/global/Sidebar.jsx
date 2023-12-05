@@ -173,7 +173,7 @@ const Sidebar = () => {
               icon={<StorefrontIcon />}
               selected={selected}
               setSelected={setSelected}
-              link="https://front-end-beta-seven.vercel.app"
+              link="https://front-end-1xkr-residenciarise.vercel.app/"
             />
 
             <Typography
