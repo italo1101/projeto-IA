@@ -5,7 +5,7 @@ import LineChartBlack from "../../components/LineChartBlack";
 const Line = () => {
   return (
     <Box m="20px">
-      <Header title="Lucro Gerado" />
+      <Header title="Número de Acidente ao Longo do Tempo" />
       <Box height="75vh">
         <LineChartBlack />
       </Box>

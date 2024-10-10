@@ -5,7 +5,7 @@ import PieChartBlack from "../../components/PieChartBlack";
 const Pie = () => {
   return (
     <Box m="20px">
-      <Header title="Produtos Mais Vendidos" />
+      <Header title="Proporção de Acidente por Tipo de Veículo" />
       <Box height="75vh">
         <PieChartBlack />
       </Box>

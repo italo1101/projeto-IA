@@ -1,16 +1,16 @@
 import { Box } from "@mui/material";
 import Header from "../../components/Header";
-import BarChartBlack from "../../components/BarChartBlack";
+import AccidentBarDataBlack from "../../components/AccidentsBarDataBlack";
 
-const Bar = () => {
+const AccidentsByCategory = () => {
   return (
     <Box m="20px">
       <Header title="Números de Acidentes por Severidade" />
       <Box height="75vh">
-        <BarChartBlack />
+        <AccidentBarDataBlack />
       </Box>
     </Box>
   );
 };
 
-export default Bar;
+export default AccidentsByCategory;

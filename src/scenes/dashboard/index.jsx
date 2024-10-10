@@ -1,10 +1,9 @@
 import { Box, Button, Container, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
-import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import Header from "../../components/Header";
 import LineChart from "../../components/LineChart";
-import GeographyChart from "../../components/GeographyChart";
+import AccidentsBarData from "../../components/AccidentsBarData";
 import BarChart from "../../components/BarChart";
 import PieChart from "../../components/PieChart";
 
@@ -17,7 +16,7 @@ const Dashboard = () => {
       {/* HEADER */}
       <Box m="20px">
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <Header title="Painel de Controle" subtitle="Bem vindo ao Painel de Controle da Ustore" />
+          <Header title="Painel de Controle" subtitle="Bem vindo ao painel de estudo de acidentes" />
 
           <Box>
             <Button
@@ -62,14 +61,14 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[900]}
               >
-                Histórico de Vendas
+                Histórico de Acidentes
               </Typography>
               <Typography
                 variant="h3"
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                R$59,342.32
+                Total: 1075.00
               </Typography>
             </Box>
             <Box>
@@ -87,59 +86,6 @@ const Dashboard = () => {
           </Box>
         </Box>
 
-        {/* Transações Recentes */}
-        <Box
-          gridColumn={{ xs: 'span 12', md: 'span 4' }}
-          gridRow="span 2"
-          backgroundColor={colors.blueAccent[800]}
-          overflow="auto"
-        >
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            borderBottom={`4px solid ${colors.grey[900]}`}
-            colors={colors.grey[100]}
-            p="15px"
-          >
-            <Typography color={colors.grey[900]} variant="h5" fontWeight="600">
-              Transações Recentes
-            </Typography>
-          </Box>
-          {mockTransactions.map((transaction, i) => (
-            <Box
-              key={`${transaction.txId}-${i}`}
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              borderBottom={`4px solid ${colors.grey[900]}`}
-              p="15px"
-            >
-              <Box>
-                <Typography
-                  color={colors.grey[900]}
-                  variant="h5"
-                  fontWeight="600"
-                >
-                  {transaction.txId}
-                </Typography>
-                <Typography color={colors.grey[900]}>
-                  {transaction.user}
-                </Typography>
-              </Box>
-              <Box color={colors.grey[900]}>{transaction.date}</Box>
-              <Box
-                backgroundColor={colors.greenAccent[500]}
-                color={colors.grey[100]}
-                p="5px 10px"
-                borderRadius="4px"
-              >
-                ${transaction.cost}
-              </Box>
-            </Box>
-          ))}
-        </Box>
-
         {/* Produtos Mais Vendidos */}
         <Box
           gridColumn={{ xs: 'span 12', md: 'span 4' }}
@@ -151,7 +97,7 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ padding: "30px 30px 0 30px" }}
           >
-            Produtos Mais Vendidos
+            Proporção de Acidente por Tipo de Veículo
           </Typography>
           <Box height="250px" mt="-20px">
             <PieChart isDashboard={true} />
@@ -169,14 +115,13 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ padding: "30px 30px 0 30px" }}
           >
-            Gastos e Ganhos
+            Números de Acidentes por Severidade
           </Typography>
           <Box height="250px" mt="-20px">
             <BarChart isDashboard={true} />
           </Box>
         </Box>
 
-        {/* Mapa de Vendas */}
         <Box
           gridColumn={{ xs: 'span 12', md: 'span 4' }}
           gridRow="span 2"
@@ -188,10 +133,10 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ marginBottom: "15px" }}
           >
-            Mapa de Vendas
+            Números de Acidentes por Tipo de CNH
           </Typography>
           <Box height="200px">
-            <GeographyChart isDashboard={true} />
+            <AccidentsBarData isDashboard={true} /> {/* Ajustado para usar o novo nome do componente */}
           </Box>
         </Box>
       </Box>

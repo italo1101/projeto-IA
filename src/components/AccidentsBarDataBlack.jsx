@@ -1,7 +1,7 @@
-import { useTheme } from "@mui/material";
-import { ResponsiveBar } from "@nivo/bar";
-import { tokens } from "../theme";
-import { mockBarData as data } from "../data/mockData";
+import { useTheme } from "@mui/material"; 
+import { ResponsiveBar } from "@nivo/bar"; 
+import { tokens } from "../theme"; 
+import { accidentsBarData as data } from "../data/mockData";
 
 const BarChart = ({ isDashboard = false }) => {
   const theme = useTheme();
@@ -9,26 +9,26 @@ const BarChart = ({ isDashboard = false }) => {
 
   return (
     <ResponsiveBar
-      data={data}
+      data={data} // Usando os dados atualizados de AccidentsBarDataBlack
       theme={{
         axis: {
           domain: {
             line: {
-              stroke: colors.grey[900],
+              stroke: colors.grey[100],
             },
           },
           legend: {
             text: {
-              fill: colors.grey[900],
+              fill: colors.grey[100],
             },
           },
           ticks: {
             line: {
-              stroke: colors.grey[900],
+              stroke: colors.grey[100],
               strokeWidth: 1,
             },
             text: {
-              fill: colors.grey[900],
+              fill: colors.grey[100],
             },
           },
         },
@@ -38,9 +38,9 @@ const BarChart = ({ isDashboard = false }) => {
           },
         },
       }}
-      keys={["acidentes"]}
-      indexBy="category"
-      margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+      keys={["accidents"]} // A chave dos dados, ajustada para "accidents"
+      indexBy="id" // "id" ajustado para a estrutura correta dos dados
+      margin={{ top: 30, right: 130, bottom: 50, left: 60  }}
       padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
@@ -123,10 +123,12 @@ const BarChart = ({ isDashboard = false }) => {
         return e.id + ": " + e.formattedValue + " acidentes na categoria: " + e.indexValue;
       }}
       tooltip={({ id, value }) => (
-        <div style={{ background: colors.grey[100], color: 'white', padding: "12px", borderRadius: "4px" }}>
+        <div style={{ background: colors.grey[900], color: 'white', padding: "12px", borderRadius: "4px" }}>
           <strong>{id}</strong>: {value} acidentes
         </div>
       )}
+    //   width={1050}
+    //   height={250}
     />
   );
 };

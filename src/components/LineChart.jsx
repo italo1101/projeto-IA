@@ -43,9 +43,9 @@ const LineChart = ({ isCustomLineColors = true, isDashboard = true }) => {
           },
         },
       }}
-      colors={isDashboard ? { datum: "color" } : { scheme: "nivo" }} 
+      colors={isDashboard ? { datum: "color" } : { scheme: "nivo" }}
       margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-      xScale={{ type: "point" }}
+      xScale={{ type: "point" }} // Eixo X como ponto para representar meses/trimestres
       yScale={{
         type: "linear",
         min: "auto",
@@ -53,8 +53,8 @@ const LineChart = ({ isCustomLineColors = true, isDashboard = true }) => {
         stacked: true,
         reverse: false,
       }}
-      yFormat=" >-.2f"
-      curve="catmullRom"
+      yFormat=" >-.2f" // Formatação dos valores de acidentes
+      curve="catmullRom" // Curvatura suave das linhas
       axisTop={null}
       axisRight={null}
       axisBottom={{
@@ -62,17 +62,17 @@ const LineChart = ({ isCustomLineColors = true, isDashboard = true }) => {
         tickSize: 0,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "transportation",
+        legend: isDashboard ? undefined : "Meses de 2020", // Legenda dos meses
         legendOffset: 36,
         legendPosition: "middle",
       }}
       axisLeft={{
         orient: "left",
-        tickValues: 5,
+        tickValues: 5, // Divisões no eixo Y para os acidentes
         tickSize: 3,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "count",
+        legend: isDashboard ? undefined : "Número de Acidentes", // Legenda do eixo Y
         legendOffset: -40,
         legendPosition: "middle",
       }}
@@ -83,7 +83,7 @@ const LineChart = ({ isCustomLineColors = true, isDashboard = true }) => {
       pointBorderWidth={2}
       pointBorderColor={{ from: "serieColor" }}
       pointLabelYOffset={-12}
-      useMesh={true}
+      useMesh={true} // Permite o uso de mesh para interação
       legends={[
         {
           anchor: "bottom-right",
@@ -112,7 +112,7 @@ const LineChart = ({ isCustomLineColors = true, isDashboard = true }) => {
       ]}
       tooltip={({ point }) => (
         <div style={{ background: colors.grey[100], color: 'white', padding: "12px", borderRadius: "4px" }}>
-          <strong>{point.data.xFormatted}</strong>: {point.data.yFormatted} vendas
+          <strong>{point.data.xFormatted}</strong>: {point.data.yFormatted} acidentes
         </div>
       )}
     />

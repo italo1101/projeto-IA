@@ -52,13 +52,13 @@ const PieChart = () => {
         from: "color",
         modifiers: [["darker", 0.2]],
       }}
-      arcLinkLabelsSkipAngle={10}
+      arcLinkLabelsSkipAngle={0}
       arcLinkLabelsTextColor={colors.grey[100]}
       arcLinkLabelsThickness={2}
       arcLinkLabelsColor={{ from: "color" }}
       enableArcLabels={true}
       arcLabelsRadiusOffset={0.4}
-      arcLabelsSkipAngle={7}
+      arcLabelsSkipAngle={0}
       arcLabelsTextColor={{
         from: "color",
         modifiers: [["darker", 2]],
@@ -108,6 +108,8 @@ const PieChart = () => {
           ],
         },
       ]}
+      // Função para exibir os valores como porcentagem
+      valueFormat={(value) => `${value}%`}
     />
   );
 };

@@ -38,8 +38,8 @@ const BarChart = ({ isDashboard = false }) => {
           },
         },
       }}
-      keys={["playstation 5", "Iphone14", "GalaxyS23", "AirPods"]}
-      indexBy="country"
+      keys={["acidentes"]}
+      indexBy="category"
       margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
       padding={0.3}
       valueScale={{ type: "linear" }}
@@ -75,7 +75,7 @@ const BarChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "Regiões",
+        legend: isDashboard ? undefined : "Categorias de Acidente",
         legendPosition: "middle",
         legendOffset: 32,
       }}
@@ -83,7 +83,7 @@ const BarChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "Produtos",
+        legend: isDashboard ? undefined : "Número de Acidentes",
         legendPosition: "middle",
         legendOffset: -40,
       }}
@@ -120,11 +120,11 @@ const BarChart = ({ isDashboard = false }) => {
       ]}
       role="application"
       barAriaLabel={function (e) {
-        return e.id + ": " + e.formattedValue + " in country: " + e.indexValue;
+        return e.id + ": " + e.formattedValue + " acidentes na categoria: " + e.indexValue;
       }}
       tooltip={({ id, value }) => (
         <div style={{ background: colors.grey[100], color: 'white', padding: "12px", borderRadius: "4px" }}>
-          <strong>{id}</strong>: {value} vendas
+          <strong>{id}</strong>: {value} acidentes
         </div>
       )}
     />

@@ -6,14 +6,14 @@ import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
+// import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
+// import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import StorefrontIcon from "@mui/icons-material/Storefront";
+// import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+// import StorefrontIcon from "@mui/icons-material/Storefront";
 
 const Item = ({ title, to, icon, selected, setSelected, link }) => {
   const theme = useTheme();
@@ -29,7 +29,7 @@ const Item = ({ title, to, icon, selected, setSelected, link }) => {
     >
       <Typography>{title}</Typography>
       {link ? (
-        <a href={link} target="_blank" rel="noopener noreferrer"/>
+        <a href={link} target="_blank" rel="noopener noreferrer" />
       ) : (
         <Link to={to} />
       )}
@@ -83,9 +83,15 @@ const Sidebar = () => {
               >
                 <Typography variant="h2" color={colors.redAccent[500]}>
                   <a href="/">
-                    <img src="../../assets/ustoreLogo.png" alt="logo" width="100px" />
+                    <img
+                      src="../../assets/detran-sp-logo.png"
+                      alt="logo"
+                      width="100px"
+                      style={{ borderRadius: "20%" }} // Bordas arredondadas
+                    />
                   </a>
                 </Typography>
+
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
                 </IconButton>
@@ -100,7 +106,7 @@ const Sidebar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={`../../assets/ray_perfil.png`}
+                  src={`../../assets/profile.jpeg`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -111,7 +117,7 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Rayane Cristina
+                  Lucas Vieira
                 </Typography>
                 <Typography variant="h5" color={colors.grey[900]}>
                   Admin
@@ -143,23 +149,23 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
+            {/* <Item
               title="Clientes"
               to="/contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
 
-            <Item
+            {/* <Item
               title="Histórico de Vendas"
               to="/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
 
-            <Typography
+            {/* <Typography
               variant="h6"
               color={colors.grey[900]}
               sx={{ m: "15px 0 5px 20px" }}
@@ -174,7 +180,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
               link="https://front-end-1xkr-residenciarise.vercel.app/"
-            />
+            /> */}
 
             <Typography
               variant="h6"
@@ -185,7 +191,7 @@ const Sidebar = () => {
             </Typography>
 
             <Item
-              title="Gastos e ganhos"
+              title="Números por Severidade"
               to="/bar"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
@@ -193,28 +199,27 @@ const Sidebar = () => {
             />
 
             <Item
-              title="Mapa de Vendas"
-              to="/geography"
-              icon={<MapOutlinedIcon />}
+              title="Acidente por CNH"
+              to="/AccidentBar"
+              icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
 
             <Item
-              title="Histórico de Vendas"
+              title="Histórico de Acidentes"
               to="/line"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Mais Vendidos"
+              title="Acidente por Veículo"
               to="/pie"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-
           </Box>
         </Menu>
       </ProSidebar>

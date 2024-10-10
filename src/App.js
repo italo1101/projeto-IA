@@ -10,7 +10,8 @@ import Bar from "./scenes/bar";
 // import Form from "./scenes/form";
 import Line from "./scenes/line";
 import Pie from "./scenes/pie";
-import Geography from "./scenes/geography";
+// import Geography from "./scenes/geography";
+import AccidentBar from "./scenes/accidentsByCategory"
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 
@@ -27,6 +28,7 @@ function App() {
           <main className="content">
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
+              <Route path="/AccidentBar" element={<AccidentBar/>}/>
               <Route path="/" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
@@ -35,7 +37,7 @@ function App() {
               <Route path="/bar" element={<Bar />} />
               <Route path="/pie" element={<Pie />} />
               <Route path="/line" element={<Line />} />
-              <Route path="/geography" element={<Geography />} />
+              {/* <Route path="/geography" element={<Geography />} /> */}
             </Routes>
           </main>
         </div>
