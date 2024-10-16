@@ -2,10 +2,6 @@ import { Box, Button, Container, IconButton, Typography, useTheme } from "@mui/m
 import { tokens } from "../../theme";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import Header from "../../components/Header";
-import LineChart from "../../components/LineChart";
-import AccidentsBarData from "../../components/AccidentsBarData";
-import BarChart from "../../components/BarChart";
-import PieChart from "../../components/PieChart";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -35,109 +31,107 @@ const Dashboard = () => {
         </Box>
       </Box>
 
-      {/* GRID & CHARTS */}
+      {/* GRID & IMAGENS */}
       <Box
         display="grid"
-        gridTemplateColumns={{ xs: '1fr', md: 'repeat(12, 1fr)' }}
-        gridAutoRows="140px"
-        gap="20px"
+        gridTemplateColumns={{ xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' }} // 2 colunas para telas pequenas e 3 para telas maiores
+        gap="20px" // Espaçamento entre as imagens
       >
-        {/* Line Chart */}
+        {/* Imagem 1 */}
         <Box
-          gridColumn={{ xs: 'span 12', md: 'span 8' }}
-          gridRow="span 2"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
           backgroundColor={colors.blueAccent[800]}
+          borderRadius="8px"
+          padding="10px"
         >
-          <Box
-            mt="25px"
-            p="0 30px"
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Box>
-              <Typography
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[900]}
-              >
-                Histórico de Acidentes
-              </Typography>
-              <Typography
-                variant="h3"
-                fontWeight="bold"
-                color={colors.greenAccent[500]}
-              >
-                Total: 1075.00
-              </Typography>
-            </Box>
-            <Box>
-              <IconButton>
-                <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-                />
-              </IconButton>
-            </Box>
-          </Box>
-
-          {/* Recent Transactions */}
-          <Box height="250px" m="-20px 0 0 0">
-            <LineChart isDashboard={true} />
-          </Box>
+          <img 
+            src="../../assets/heatmap.png" 
+            alt="Imagem 1" 
+            style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+          />
         </Box>
 
-        {/* Produtos Mais Vendidos */}
+        {/* Imagem 2 */}
         <Box
-          gridColumn={{ xs: 'span 12', md: 'span 4' }}
-          gridRow="span 2"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
           backgroundColor={colors.blueAccent[800]}
+          borderRadius="8px"
+          padding="10px"
         >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ padding: "30px 30px 0 30px" }}
-          >
-            Proporção de Acidente por Tipo de Veículo
-          </Typography>
-          <Box height="250px" mt="-20px">
-            <PieChart isDashboard={true} />
-          </Box>
+          <img 
+            src="../../assets/barchart02.png" 
+            alt="Imagem 2" 
+            style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+          />
         </Box>
 
-        {/* Gastos e Ganhos */}
+        {/* Imagem 3 */}
         <Box
-          gridColumn={{ xs: 'span 12', md: 'span 4' }}
-          gridRow="span 2"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
           backgroundColor={colors.blueAccent[800]}
+          borderRadius="8px"
+          padding="10px"
         >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ padding: "30px 30px 0 30px" }}
-          >
-            Números de Acidentes por Severidade
-          </Typography>
-          <Box height="250px" mt="-20px">
-            <BarChart isDashboard={true} />
-          </Box>
+          <img 
+            src="../../assets/linechart.png" 
+            alt="Imagem 3" 
+            style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+          />
         </Box>
 
+        {/* Imagem 4 */}
         <Box
-          gridColumn={{ xs: 'span 12', md: 'span 4' }}
-          gridRow="span 2"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
           backgroundColor={colors.blueAccent[800]}
-          padding="30px"
+          borderRadius="8px"
+          padding="10px"
+          height="350px"
         >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ marginBottom: "15px" }}
-          >
-            Números de Acidentes por Tipo de CNH
-          </Typography>
-          <Box height="200px">
-            <AccidentsBarData isDashboard={true} /> {/* Ajustado para usar o novo nome do componente */}
-          </Box>
+          <img 
+            src="../../assets/piechart.png" 
+            alt="Imagem 4" 
+            style={{ width: '100%', height: '90%', borderRadius: '8px' }}
+          />
+        </Box>
+
+        {/* Imagem 5 */}
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          backgroundColor={colors.blueAccent[800]}
+          borderRadius="8px"
+          padding="10px"
+        >
+          <img 
+            src="../../assets/barchart01.png" 
+            alt="Imagem 5" 
+            style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+          />
+        </Box>
+
+        {/* Imagem 6 */}
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          backgroundColor={colors.blueAccent[800]}
+          borderRadius="8px"
+          padding="10px"
+        >
+          <img 
+            src="../../assets/barchart03.png" 
+            alt="Imagem 6" 
+            style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+          />
         </Box>
       </Box>
     </Container>
