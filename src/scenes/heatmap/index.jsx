@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
+import Header from "../../components/Header";
 
-const Barchart01 = () => {
+const Heatmap = () => {
   return (
     <Box m="20px">
       <Box
@@ -13,7 +14,7 @@ const Barchart01 = () => {
         height="200px" // Aumentando a altura para melhor centralização
       >
         <img 
-          src="../../assets/linechart.png" 
+          src="../../assets/heatmap.png" 
           alt="Imagem 1" 
           style={{ width: '60%', height: 'auto', borderRadius: '8px', margin: 'auto' }} // Adicionando margin auto
         />
@@ -22,4 +23,4 @@ const Barchart01 = () => {
   );
 };
 
-export default Barchart01;
+export default Heatmap;

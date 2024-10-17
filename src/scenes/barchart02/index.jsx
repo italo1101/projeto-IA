@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 
-const Barchart01 = () => {
+const Barchart02 = () => {
   return (
     <Box m="20px">
       <Box
@@ -13,7 +13,7 @@ const Barchart01 = () => {
         height="200px" // Aumentando a altura para melhor centralização
       >
         <img 
-          src="../../assets/linechart.png" 
+          src="../../assets/barchart03.jpeg" 
           alt="Imagem 1" 
           style={{ width: '60%', height: 'auto', borderRadius: '8px', margin: 'auto' }} // Adicionando margin auto
         />
@@ -22,4 +22,4 @@ const Barchart01 = () => {
   );
 };
 
-export default Barchart01;
+export default Barchart02;

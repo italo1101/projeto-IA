@@ -4,14 +4,14 @@ import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
 import Team from "./scenes/team";
-import Invoices from "./scenes/invoices";
+import Barchart03 from "./scenes/barchart03";
 import Contacts from "./scenes/contacts";
-import Bar from "./scenes/bar";
+import Heatmap from "./scenes/heatmap";
 // import Form from "./scenes/form";
 import Line from "./scenes/line";
-import Pie from "./scenes/pie";
+import Barchart02 from "./scenes/barchart02";
 // import Geography from "./scenes/geography";
-import AccidentBar from "./scenes/accidentsByCategory"
+import Barchart01 from "./scenes/barchart01"
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 
@@ -28,14 +28,14 @@ function App() {
           <main className="content">
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
-              <Route path="/AccidentBar" element={<AccidentBar/>}/>
+              <Route path="/barchar01" element={<Barchart01/>}/>
               <Route path="/" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
-              <Route path="/invoices" element={<Invoices />} />
+              <Route path="/barchart03" element={<Barchart03 />} />
               {/* <Route path="/form" element={<Form />} /> */}
-              <Route path="/bar" element={<Bar />} />
-              <Route path="/pie" element={<Pie />} />
+              <Route path="/heatmap" element={<Heatmap />} />
+              <Route path="/barchart02" element={<Barchart02 />} />
               <Route path="/line" element={<Line />} />
               {/* <Route path="/geography" element={<Geography />} /> */}
             </Routes>

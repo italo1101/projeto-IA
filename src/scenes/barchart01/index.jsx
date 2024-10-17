@@ -13,7 +13,7 @@ const Barchart01 = () => {
         height="200px" // Aumentando a altura para melhor centralização
       >
         <img 
-          src="../../assets/linechart.png" 
+          src="../../assets/barchart02.png" 
           alt="Imagem 1" 
           style={{ width: '60%', height: 'auto', borderRadius: '8px', margin: 'auto' }} // Adicionando margin auto
         />

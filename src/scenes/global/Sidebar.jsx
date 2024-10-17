@@ -10,6 +10,7 @@ import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 // import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
+import GridOnIcon from "@mui/icons-material/GridOn";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 // import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
@@ -191,16 +192,16 @@ const Sidebar = () => {
             </Typography>
 
             <Item
-              title="Números por Severidade"
-              to="/bar"
-              icon={<BarChartOutlinedIcon />}
+              title="Acidentes por Dia e Hora"
+              to="/heatmap"
+              icon={<GridOnIcon />}
               selected={selected}
               setSelected={setSelected}
             />
 
             <Item
-              title="Acidente por CNH"
-              to="/AccidentBar"
+              title="Severidade do Acidente"
+              to="/barchar01"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -214,9 +215,17 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
+              title="Tipo de Veículo"
+              to="/barchart02"
+              icon={<BarChartOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
               title="Acidente por Veículo"
-              to="/pie"
-              icon={<PieChartOutlineOutlinedIcon />}
+              to="/barchart03"
+              icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

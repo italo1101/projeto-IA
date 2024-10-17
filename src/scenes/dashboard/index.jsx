@@ -96,7 +96,7 @@ const Dashboard = () => {
           height="350px"
         >
           <img 
-            src="../../assets/piechart.png" 
+            src="../../assets/barchart03.jpeg" 
             alt="Imagem 4" 
             style={{ width: '100%', height: '90%', borderRadius: '8px' }}
           />
@@ -112,24 +112,8 @@ const Dashboard = () => {
           padding="10px"
         >
           <img 
-            src="../../assets/barchart01.png" 
+            src="../../assets/barchart01.jpeg" 
             alt="Imagem 5" 
-            style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-          />
-        </Box>
-
-        {/* Imagem 6 */}
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          backgroundColor={colors.blueAccent[800]}
-          borderRadius="8px"
-          padding="10px"
-        >
-          <img 
-            src="../../assets/barchart03.png" 
-            alt="Imagem 6" 
             style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
           />
         </Box>
