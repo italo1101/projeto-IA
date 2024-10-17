@@ -223,7 +223,7 @@ const Sidebar = () => {
             />
 
             <Item
-              title="Acidente por Veículo"
+              title="Faixa Etária"
               to="/barchart03"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
